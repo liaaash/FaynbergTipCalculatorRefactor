@@ -15,10 +15,7 @@ public class TipCalculatorRunner {
         TipCalculator group1 = new TipCalculator(people, percent);
 
         System.out.println("Enter the cost of each item in dollars and cents, and hit enter after every item (type -1 when finished).");
-        double n;
-        while ((n = scan.nextDouble()) != -1) {
-            group1.addMeal(n);
-        }
+
 
 
         /* I created the variable of initialBill and made a loop that adds every item from my ArrayList
