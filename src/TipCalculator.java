@@ -37,7 +37,7 @@ public class TipCalculator {
     public double totalBill(){
        return totalBillBeforeTip + tipAmount();
     }
-
+    //
     public double perPersonCostBeforeTip(){
         return totalBillBeforeTip / numPeople;
     }

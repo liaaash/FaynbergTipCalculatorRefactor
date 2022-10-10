@@ -6,7 +6,7 @@ public class TipCalculatorRunner {
         Scanner scan = new Scanner(System.in);
         DecimalFormat formatter = new DecimalFormat("#.##");
         ArrayList<Double> costs = new ArrayList<Double>();
-
+        //
         System.out.println("Welcome to the tip calculator! (hit enter to continue)");
         String ok = scan.nextLine();
         System.out.println("How many people are in your group? (Enter an integer)");
