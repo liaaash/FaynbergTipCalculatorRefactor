@@ -3,11 +3,13 @@ import java.util.ArrayList;
 public class TipCalculator {
     private int numPeople;
     private int tipPercentage;
+    private double totalBillBeforeTip;
     public ArrayList<Double> costs;
 
     public TipCalculator(int group, int percent) {
      numPeople = group;
      tipPercentage = percent;
+     totalBillBeforeTip = 0.0;
      costs = new ArrayList<Double>();
     }
 
@@ -18,11 +20,10 @@ public class TipCalculator {
 
     public double getTotalBillBeforeTip() {
         // for loop add up values
-        double initialBill = 0;
         for (Double i : costs) {
-            initialBill += i;
+            totalBillBeforeTip += i;
         }
-        return initialBill;
+        return totalBillBeforeTip;
     }
 
     public int getTipPercentage(){
@@ -30,28 +31,23 @@ public class TipCalculator {
     }
 
     public double tipAmount() {
-        double tipAmt = (getTotalBillBeforeTip() * tipPercentage ) / 100;
-        return tipAmt;
+        return totalBillBeforeTip * (tipPercentage / 100.0);
     }
 
     public double totalBill(){
-       double tBill = getTotalBillBeforeTip() + tipAmount();
-       return tBill;
+       return totalBillBeforeTip + tipAmount();
     }
 
     public double perPersonCostBeforeTip(){
-        double personCostBefore = getTotalBillBeforeTip() / numPeople;
-        return personCostBefore;
+        return totalBillBeforeTip / numPeople;
     }
 
     public double perPersonTipAmount() {
-        double personTip = tipAmount() / numPeople;
-        return personTip;
+        return tipAmount() / numPeople;
     }
 
     public double perPersonTotalCost(){
-        double personCostAfter = totalBill() / numPeople;
-        return personCostAfter;
+        return totalBill() / numPeople;
     }
 }
 
